@@ -1,13 +1,17 @@
-Enoncé du projet
+# Enoncé du projet
 
-Obj pédagogiques :
+## Obj pédagogiques :
 
-Ecrire un programme informatique d'une façon pythonique et tester son code en respectant un cahier des charges.
-Calculer, écrire et stocker d'une façon permanente des statistiques et les afficher avec des viz : tableau de bord, graphes, ... (sur les joueurs).
-Tracker le comportement des joueurs pour détecter leur stratégie. Un bon joueur appliquera la dichotomie (faite votre recherche).
-Transformer le script en un exécutable ou mettre le jeu en ligne (avec une base de données).
-Optionel : Réaliser le programme réciproque : on change les rôles : Python devine le nombre que vous avez choisi (obj : écrire un script avec une logique inverse).
-Livrables :
+- Ecrire un programme informatique d'une façon pythonique et tester son code en respectant un cahier des charges.
+- Calculer, écrire et stocker d'une façon permanente des statistiques et les afficher avec des viz : tableau de bord, graphes, ... (sur les joueurs).
+- Tracker le comportement des joueurs pour détecter leur stratégie. Un bon joueur appliquera la dichotomie (faite votre recherche).
+- Transformer le script en un exécutable ou mettre le jeu en ligne (avec une base de données).
+
+### Optionel : 
+
+Réaliser le programme réciproque : on change les rôles : Python devine le nombre que vous avez choisi (obj : écrire un script avec une logique inverse).
+
+### Livrables :
 Selon votre niveau en Python, réaliser le projet : sous la forme d'un script qui contient de simples instructions (procédurale) ; 2è version en utilisant des fonctions ; en orienté objet : déclarer des classes ; ou encore sous la forme d'un package (que vs pouvous installer et importer) ? Peu importe la version, pensez à gérer les exceptions
 
 Rq : Utiliser des fonctions permet de simplifier les programmes et d’en faciliter la relecture.
