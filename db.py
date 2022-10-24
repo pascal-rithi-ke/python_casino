@@ -1,5 +1,4 @@
 import os
-import ast
 import pymongo
 import random, string
 from dotenv import load_dotenv
