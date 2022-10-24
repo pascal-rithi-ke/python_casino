@@ -1,4 +1,3 @@
-from cgi import test
 import os
 import ast
 import pymongo
