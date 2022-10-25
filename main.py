@@ -1,10 +1,12 @@
 # 1è façon avec True
 from random import randrange
+from Class import User,Partie
+from FunctionFile import generateId
 #from database.db import casino_db, generateId
 
 
 #users = casino_db.get_collection('users')
-#users.insert_one({'username': 'testRegister', 'password': 'testRegister', '_id': generateId(9)})
+#users.insert_one({'username': 'testRegister', 'password': 'testRegister', 'id': generateId(9)})
 #for user in users.find():
 #    print(user)
 
@@ -24,9 +26,9 @@ while True :
                 print('Erreur vous devez choisir 1 pour vous connecter ou 0 pour vous enregistrer')
         except:
             print('Erreur')
+
     if(login_or_register == 1):
         levels = [str(1)]
-
     else:
         levels = [str(1), str(2)]
 
@@ -56,7 +58,7 @@ while True :
     print('Mon choix est = ', nb_ordi)
     
     # début du jeu
-    while nb_coup != nb_legit_coup:
+    while nb_coup <= nb_legit_coup:
         while True:
             try:
                 nb_user = int(input ("Entrez SVP votre nombre ? \n\n"))
