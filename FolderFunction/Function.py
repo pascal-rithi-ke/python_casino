@@ -1,15 +1,36 @@
 import random, string
-from Class import User,Partie
-from FunctionFile import generateId
+from FolderClass.Class import User,Partie
 from db import userCollection, partieCollection
 
 #Genere un id aléatoire
 def generateId(length):
     return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(length))
 
+def askUserInfoForRegister():
+    while True:
+        try:
+            id = generateId(8)
+            prenom = str(input("Quelle est votre prénom \n\n"))
+            nom = str(input("Quelle est votre nom \n\n"))
+            print(f"Bienvenue {prenom} {nom} \n\n")
+            username = str(input("Veuillez choisir un nom d'utilisateur \n\n"))
+            password = str(input("Définissez votre mot de passe \n\n"))
+            return User(prenom, nom, id,username, password, [str(1)])
+        except:
+            return 'Vous devez rentrer vos information sous forme de chaine de caractère \n\n'
+
+def askUserInfoForLogin():
+    while True:
+        try:
+            username = str(input("Veuillez saisir votre nom d'utilisateur \n\n"))
+            password = str(input("Saisissez votre mot de passe \n\n"))
+            return Login(username, password)
+        except:
+            return 'User not found'
+
 def Register(user: User):
     try:
-        ObjUser = {"id":user.id,"prenom":user.prenom,"nom":user.nom,"password":user.password}
+        ObjUser = {"id":user.id,"prenom":user.prenom,"username": user.username, "nom":user.nom,"password":user.password, "levels" : user.nbcoup}
         userCollection.insert_one(ObjUser) 
         return 'ok'
     except:

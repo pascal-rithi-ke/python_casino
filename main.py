@@ -1,7 +1,7 @@
 # 1è façon avec True
 from random import randrange
-from Class import User,Partie
-from FunctionFile import generateId
+from FolderClass.Class import User,Partie
+from FolderFunction.Function import Login, Register, askUserInfoForLogin, askUserInfoForRegister
 #from database.db import casino_db, generateId
 
 
@@ -28,9 +28,15 @@ while True :
             print('Erreur')
 
     if(login_or_register == 1):
-        levels = [str(1)]
+        user = askUserInfoForLogin()
+        print(user)
+        levels = user['levels']
     else:
-        levels = [str(1), str(2)]
+        user = askUserInfoForRegister()
+        
+        Register(user)
+        userData = Login(user.username, user.password)
+        levels = user['levels']
 
     authenticated = True
     # choix du niveau
@@ -41,7 +47,7 @@ while True :
             if(str(selected_level) in levels):
                 break
             else:
-                print('Erreur vous avez sélectionné un niveau que vous n\'avez pas débloquer ou inexistant \n\n Sélectionner parmis les niveaux :' + user_avaible_levels_string)
+                print('Erreur vous avez sélectionné un niveau que vous n0\'avez pas débloquer ou inexistant \n\n Sélectionner parmis les niveaux :' + user_avaible_levels_string)
         except:
             print('Erreur')
 
@@ -58,24 +64,25 @@ while True :
     print('Mon choix est = ', nb_ordi)
     
     # début du jeu
-    while nb_coup <= nb_legit_coup:
+    while nb_coup < nb_legit_coup:
         while True:
             try:
                 nb_user = int(input ("Entrez SVP votre nombre ? \n\n"))
                 break
             except:
                 print('Erreur')
-        nb_coup += 1
+        
         if(nb_coup < nb_legit_coup):
             if nb_user > nb_ordi :
                 print ('Votre nbre est trop grand')
             elif nb_user < nb_ordi :
                 print ('Votre nbre est trop petit')
             else :
-                print ("Bingo ! Vous avez gagné en {} coup(s) !".format(nb_coup))
+                print ("Bingo ! Vous avez gagné en {} coup(s) !".format(nb_coup + 1))
                 break
         else:
             print('vous avez perdu')
+        nb_coup += 1
     continue_casino = ''
     while True:
         try:
