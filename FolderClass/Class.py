@@ -1,5 +1,3 @@
-#import bcrypt
-
 class User:
   def __init__(self, prenom, nom, id, username ,password, nbcoup):
     self.prenom = prenom

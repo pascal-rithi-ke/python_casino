@@ -2,13 +2,6 @@
 from random import randrange
 from FolderClass.Class import User,Partie
 from FolderFunction.Function import InitPartie, Login, Register, UpdateUserLevels, askUserInfoForLogin, askUserInfoForRegister
-#from database.db import casino_db, generateId
-
-
-#users = casino_db.get_collection('users')
-#users.insert_one({'username': 'testRegister', 'password': 'testRegister', 'id': generateId(9)})
-#for user in users.find():
-#    print(user)
 
 authenticated = False
 
