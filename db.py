@@ -2,7 +2,7 @@ import os, pymongo
 
 from dotenv import load_dotenv
 from FolderClass.Class import User,Partie
-from FolderFunction.Function import generateId
+#from FolderFunction.Function import generateId
 
 load_dotenv()
 
@@ -17,7 +17,7 @@ userCollection = tableBdd["users"]
 partieCollection = tableBdd["partie"]
 # print(client.list_database_names())
 
-saisieUser = input("Bonjour Voulez vous jouer ? O/N\n")
+'''saisieUser = input("Bonjour Voulez vous jouer ? O/N\n")
 while saisieUser != "O" or saisieUser != "N":
     if saisieUser != "O" or saisieUser != "N":
         saisieUser = input("Veuillez choisir entre O/N\n")
@@ -42,5 +42,5 @@ while saisieUser != "O" or saisieUser != "N":
         break
     if saisieUser == "N":
         print("Aurevoir")
-        break
+        break'''
     
