@@ -53,3 +53,8 @@ def InitPartie(user: User):
         return 'ok'
     except:
         return 'partie not created'
+
+def UpdateUserLevels(levels: list, idUser: str):
+    filter = {'id': idUser}
+    newValues = {"$set" : {'levels': levels}}
+    return userCollection.update_one(filter, newValues)
