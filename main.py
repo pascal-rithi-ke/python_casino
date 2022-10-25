@@ -1,7 +1,7 @@
 # 1è façon avec True
 from random import randrange
 from FolderClass.Class import User,Partie
-from FolderFunction.Function import Login, Register, UpdateUserLevels, askUserInfoForLogin, askUserInfoForRegister
+from FolderFunction.Function import InitPartie, Login, Register, UpdateUserLevels, askUserInfoForLogin, askUserInfoForRegister
 #from database.db import casino_db, generateId
 
 
@@ -42,7 +42,8 @@ while True :
         
 
     if(authenticated == True):
-        # choix du niveau
+        InitPartie(userData)
+        #choix du niveau
         while True:
             try:
                 user_avaible_levels_string = ' | '.join(levels)

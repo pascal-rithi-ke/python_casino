@@ -46,8 +46,8 @@ def Login(username, password):
 
 def InitPartie(user: User):
     idPartie = generateId(16)
-    partie = Partie(idPartie,user.id,user.nom,user.prenom)
-    ObjPartie = {"idPartie":partie.id,"idUser":user.id,"nom":user.nom,"prenom":user.prenom}
+    partie = Partie(idPartie,user['id'],user['nom'],user['prenom'], user['username'], user['levels'])
+    ObjPartie = {"idPartie":partie.id,"idUser":user['id'],"nom":user['nom'],"prenom":user['prenom']}
     try:
         partieCollection.insert_one(ObjPartie)
         return 'ok'
